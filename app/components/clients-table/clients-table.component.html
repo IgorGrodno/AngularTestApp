@@ -1,0 +1,16 @@
+<div style="margin-top: 40px;margin-right: 20px;margin-left: 60px; width: 90%;" *ngIf="show">
+    <div class="d-flex flex-row justify-content-between">
+        <th scope="col" style="flex: 50%; text-align: center;">Name</th>
+        <th scope="col" style="flex: 50%; text-align: center;">acoount</th>
+    </div>
+    <table class="table">
+        <tbody>
+            <tr class="d-flex flex-row justify-content-between" *ngFor="let client of clients">
+                <td style="flex: 50%; text-align: center;">
+                    <span>{{client.name.first}} </span><span>{{client.name.last}}</span>
+                </td>
+                <td style="flex: 50%; text-align: center;">{{client.transactionsCount}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

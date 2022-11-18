@@ -1,0 +1,11 @@
+<div class="d-flex flex-column justify-content-between border-0">
+    <app-summary-main-card [transactionTotalCount]="dataObject.total">
+    </app-summary-main-card>
+    <div
+        style="display: flex; flex-direction: row; flex-wrap: wrap;justify-content: space-between;  gap: 1rem; margin-top:1rem;">
+        <app-summary-card class="border rounded" style="  flex: 1 1 calc((100% / 2) - 1rem);"
+            *ngFor="let transaction of dataObject.data | transactionCountByType;" [transactionType]="transaction.type"
+            [transactionCount]="transaction.transactionCount">
+        </app-summary-card>
+    </div>
+</div>

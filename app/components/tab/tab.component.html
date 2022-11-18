@@ -1,0 +1,13 @@
+<div class="w-100 mx-auto border rounded   bg-light">
+    <ul class="nav nav-tabs d-flex">
+        <li class="nav-item border rounded-top border-bottom-0" style="flex:25%;text-align: center"
+            *ngFor="let tab of tabsData; let i=index">
+            <a class="nav-link text-dark  bg-light" [routerLink]="['/navigator']"
+                [queryParams]="{ tab: tab.id}">{{tab.type}}</a>
+        </li>
+    </ul>
+    <div *ngFor="let tab of tabsData">
+        <div class="d-none">{{tab.id}}</div>
+        <app-clients-table [clients]="tab.clients" [id]="tab.id"></app-clients-table>
+    </div>
+</div>
